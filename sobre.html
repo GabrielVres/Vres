@@ -16,13 +16,29 @@
             background-image: url('Exemple2.png');
             min-height: 100%;
         }
+
+        @media (max-width: 992px) {
+
+            .navbar .links,
+            .navbar .action_btn {
+                display: none;
+            }
+
+            .navbar .toggle_btn {
+                display: none;
+            }
+
+            .dropdown_menu {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="navbar">
-            <div class="logo"><a href="#">V.RES Project</a></div>
+            <div class="logo"><a href="index.html">V.RES Project</a></div>
             <ul class="links">
             </ul>
             <a href="sobre.html" class="action_btn">Sobre o Projeto</a>
@@ -32,16 +48,8 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
-
-        <div class="dropdown_menu">
-                <a href="" class="action_btn">Sobre o Projeto</a>
-                <br><br><br>
-                <a href="" class="action_btn">Login</a>
-                <br><br><br>
-                <a href="" class="action_btn">Cadastre-se</a>
-        </div>
     </header>
-    <!-- Header with full-height image -->
+
     <header class="bgimg-1 w3-display-container" id="home">
         <div class="w3-display-left w3-text-orange" style="padding:48px">
             <span class="w3-jumbo w3-hide-small">Start something amazing today</span><br>
@@ -61,7 +69,9 @@
         <div class="w3-row-padding">
             <div>
                 <h3>About our project.</h3>
-                <p>The VRES Project is an innovative initiative born from the idea of renewing distance education through virtual reality. We believe that with a well-structured platform, we can provide enhanced performance in call-meets fully aligned with the edtech market</p>
+                <p>The VRES Project is an innovative initiative born from the idea of renewing distance education
+                    through virtual reality. We believe that with a well-structured platform, we can provide enhanced
+                    performance in call-meets fully aligned with the edtech market</p>
             </div>
         </div>
     </div>
@@ -70,14 +80,15 @@
     <div class="w3-container w3-white" style="padding:128px 16px" id="team">
         <h3 class="w3-center">THE TEAM</h3>
         <p class="w3-center w3-large">All about our dev team</p>
-        <div class="w3-row-padding w3-text-orange w3-white" style="margin-top:64px">
+        <div class="w3-row-padding w3-text-orange" style="margin-top:64px">
             <div class="w3-col l2 m6 w3-margin-bottom">
                 <div class="w3-card">
                     <img src="gabriel.jpg" alt="Gabriel" style="width:100%">
                     <div class="w3-container">
                         <h3>Gabriel Henrique</h3>
                         <p class="w3-opacity">Front-end Dev</p>
-                        <p>Gabriel was a music teacher and he is the team leader. He is responsible for the VRES project. Nowadays, he works as a front-end developer</p>
+                        <p>Gabriel was a music teacher and he is the team leader. He is responsible for the VRES
+                            project. Nowadays, he works as a front-end developer</p>
                     </div>
                 </div>
             </div>
@@ -146,26 +157,10 @@
             <i class="fa fa-instagram w3-hover-opacity"></i>
             <i class="fa fa-github w3-hover-opacity"></i>
         </div>
-        <p>Do you want to get the code? Just click there and enjoy our project >>> <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+        <p>Do you want to get the code? Just click there and enjoy our project >>> <a
+                href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
                 class="w3-hover-text-white">https://github.com/GabrielVres/Vres/tree/Vres_test</a></p>
     </footer>
-    <script>
-        // Toggle between showing and hiding the sidebar when clicking the menu icon
-        var mySidebar = document.getElementById("mySidebar");
-        
-        function w3_open() {
-          if (mySidebar.style.display === 'block') {
-            mySidebar.style.display = 'none';
-          } else {
-            mySidebar.style.display = 'block';
-          }
-        }
-        
-        // Close the sidebar with the close button
-        function w3_close() {
-            mySidebar.style.display = "none";
-        }
-        </script>
 </body>
 
 </html>
