@@ -1,131 +1,179 @@
-
-.fadeIn {
-    animation: 2s fadeIn;
-    opacity: 1;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('Design.png');
+    background-size: cover;
+    background-position: center;
 }
 
-.image-layer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
+li{
+    list-style-type: none;
+}
 
-.image-layer-forgot {
-    position: absolute;
-    top: 0;
-    left: 0;
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: red;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    color: orange;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-
+    height: 60px;
+    max-width: 1800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(15px);
 }
 
-.login-container {
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orange;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+    color: orange;
+}
+
+li a {
+    color: rgb(221, 123, 19);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar .toggle_btn {
+    color:orange;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* dropdown */
+.dropdown_menu {
+    display: none;
     position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+    
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+/* hero */
+
+section {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    opacity: 1;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-}
-
-.login-form h2 {
     text-align: center;
-    margin-bottom: 20px;
+    color: #fff;
 }
 
-.login-form h2:hover {
-    cursor: default;
+#hero h1 {
+    color: orange;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(15px);
 }
 
-.login-form input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
+
+
+/* responsive */
+
+@media (max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none   ;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+    #hero h1{
+        font-size: 2rem;
+        backdrop-filter: blur(15px);
+    }
 }
 
-.login-form button {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-}
-
-input::placeholder {
-    text-align: center;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%; 
-    margin-top: 10px;
-}
-
-button[type="submit"] {
-    width: 100%;
-    margin-top: 20px; 
-    margin-left: 10px;
-}
-
-span{
-    display: block; 
-    text-align: center; 
-    margin-top: 20px;
-}
-
-span a{
-    text-decoration: none;
-    color: white;
-}
-
-/* SIGNUP FORM */
-
-.signup-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-/* FORGOT FORM */
-
-div.forgot-form {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 90vh;
-}
-
-/* MEDIA QUERY */
-
-@media screen and (max-width: 600px) {
-    span a {
-        color: white;
-        background-color: black;
-        text-decoration: solid bold;
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+    #hero h1{
+        font-size: 2rem;
+        backdrop-filter: blur(15px);
     }
 }
