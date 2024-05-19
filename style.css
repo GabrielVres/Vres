@@ -164,6 +164,11 @@ section {
         font-size: 2rem;
         backdrop-filter: blur(15px);
     }
+    .vres_row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1rem;
+    }
 }
 
 @media (max-width: 576px){
@@ -174,5 +179,15 @@ section {
     #hero h1{
         font-size: 2rem;
         backdrop-filter: blur(15px);
+    }
+    .coluna-3 {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .vres_row {
+        display: flex;
+        flex-direction: column;
     }
 }
